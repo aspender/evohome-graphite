@@ -51,7 +51,7 @@ graphitesend.init(prefix='evohome', graphite_server=options.graphitehost, graphi
 metrics = {}
 for device in client.temperatures():
 	if device['thermostat'] is 'DOMESTIC_HOT_WATER':
-		metrics["water.setpoint"] = device['temp']
+		metrics["water.temp"] = device['temp']
 	else:
 		metrics["heating.{0}.setpoint".format(device['name'])] = device['setpoint']
 		metrics["heating.{0}.temp".format(device['name'])] = device['temp']
